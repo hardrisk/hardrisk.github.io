@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+
+</head>
+<body>
+
+<style>
+#btnDeConv{display:none;}
+</style>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<input type="text" />
+<button id="btnConv">Convert</button>
+<button id="btnDeConv">DeConvert</button>
+
+<script>
+str = "asd";
+
+$('input').val(str);
+
+$('#btnConv').click(function(){
+  var txt = $('input').val();
+  var b64 = btoa(unescape(encodeURIComponent(txt)));
+  $('input').val(b64);
+  $('#btnDeConv').show();
+});
+$('#btnDeConv').click(function(){
+  var b64 = $('input').val();
+  var txt = decodeURIComponent(escape(window.atob(b64)));
+  $('input').val(txt);
+});
+</script>
+
+
+</body>
+</html>
