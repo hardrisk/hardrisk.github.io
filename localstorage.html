@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+    $(document).ready (function () {
+      $("*[data-store]").each(function () {
+        $(this).val(localStorage.getItem("item-" + $(this).attr("data-store")));
+      });
+
+      $("*[data-store]").on("keyup", function (itm) {
+        localStorage.setItem ("item-" + $(this).attr("data-store"), $(this).val());
+      })
+    })
+</script>
+
+<body>
+<center>
+
+<textarea autofocus placeholder="yaz..." style="width:100%;height:200px;" data-store="1"></textarea><br>
+<textarea data-store="2"></textarea><br>
+<textarea data-store="3"></textarea><br>
+<textarea data-store="4"></textarea><br>
+<textarea data-store="5"></textarea><br>
+<textarea data-store="6"></textarea><br>
+<textarea data-store="7"></textarea><br>
+<textarea data-store="8"></textarea><br>
+<textarea data-store="9"></textarea><br>
+
+</center>
+</body>
+</html>
