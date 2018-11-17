@@ -9,11 +9,11 @@
 
 
 <form id="codeconverter">
-Input Text:<br />
-<textarea autofocus name="inputtext" cols=80 rows=20></textarea><br />
-<input onclick="javascript:converttext();" style="margin-top: 5px;" type="button" value="Convert" /><br />
-Output Text:<br />
-<textarea name="outputtext" cols=80 rows=20></textarea><br />
+Input Text:<br>
+<textarea autofocus name="inputtext" cols=80 rows=20></textarea><br>
+<input onclick="javascript:converttext();" style="margin-top: 5px;" type="button" value="Convert" /><br>
+Output Text:<br>
+<textarea name="outputtext" cols=80 rows=20></textarea><br>
 </form>
 
 <script language="javascript" type="text/javascript">
@@ -26,7 +26,7 @@ function converttext(){
     out = out.replace(/\"/g, '&quot;')
     out = out.replace(/\'/g, '&#39;')
     out = out.replace(/\|/g, '&#124;')
-    out = 'out'
+    out = '+out+'
  document.getElementById('codeconverter').outputtext.value = out;
 }
 /* ]]> */
