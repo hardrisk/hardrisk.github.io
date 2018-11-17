@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
-
 </head>
 <body>
+<center>
+
 
 <form id="codeconverter">
 Input Text:<br />
-<textarea name="inputtext" cols=80 rows=20></textarea><br />
+<textarea autofocus name="inputtext" cols=80 rows=20></textarea><br />
 <input onclick="javascript:converttext();" style="margin-top: 5px;" type="button" value="Convert" /><br />
 Output Text:<br />
 <textarea name="outputtext" cols=80 rows=20></textarea><br />
@@ -25,11 +26,13 @@ function converttext(){
     out = out.replace(/\"/g, '&quot;')
     out = out.replace(/\'/g, '&#39;')
     out = out.replace(/\|/g, '&#124;')
-    out = '<div style="BORDER: #cccccc 1px dashed; PADDING: 5px; WIDTH: 95%; BACKGROUND: #f0f0f0; COLOR: #000000; FONT-SIZE: 12px; OVERFLOW: auto; height:auto"><pre>' + out + '</pre></div>'
+    out = 'out'
  document.getElementById('codeconverter').outputtext.value = out;
 }
 /* ]]> */
 </script>
 
+
+</center>
 </body>
 </html>
