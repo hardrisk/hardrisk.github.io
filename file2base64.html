@@ -1,15 +1,14 @@
 <html>
 <body>
- 
-    <p>Select a File to Load:</p>
-    <input id="inputFileToLoad" type="file" onchange="loadImageFileAsURL();" />
+<center>
+<p>Select a File to Load:</p>
+<input id="inputFileToLoad" type="file" onchange="loadImageFileAsURL();">
      
  
-    <p>File Contents as DataURL:</p>
-    <textarea id="textAreaFileContents" style="width:640;height:240" ></textarea>
+<p>File Contents as DataURL:</p>
+<textarea onfocus="this.select()" onmouseover="this.focus()" onclick="this.focus();this.select()" id="textAreaFileContents" style="width:640;height:240"></textarea>
  
 <script type="text/javascript">
- 
 function loadImageFileAsURL()
 {
     var filesSelected = document.getElementById("inputFileToLoad").files;
@@ -32,8 +31,8 @@ function loadImageFileAsURL()
         fileReader.readAsDataURL(fileToLoad);
     }
 }
- 
 </script>
- <br><a href="https://thiscouldbebetter.wordpress.com/2013/07/03/converting-a-file-to-a-base64-dataurl-in-javascript/"></a><br>
+<br><a href="https://thiscouldbebetter.wordpress.com/2013/07/03/converting-a-file-to-a-base64-dataurl-in-javascript/"></a><br>
 </body>
+</center>
 </html>
