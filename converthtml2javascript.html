@@ -26,7 +26,7 @@ function converttext(){
     out = out.replace(/\"/g, '&quot;')
     out = out.replace(/\'/g, '&#39;')
     out = out.replace(/\|/g, '&#124;')
-    out = '+out+'
+    out = ''+out+''
  document.getElementById('codeconverter').outputtext.value = out;
 }
 /* ]]> */
