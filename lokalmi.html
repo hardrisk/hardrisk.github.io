@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title>localStorage</title>
+    <script src="http://www.modernizr.com/downloads/modernizr-latest.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <style>
+        label, input { display: block; }
+        textarea { width: 300px; height: 150px; }
+    </style>
+</head>
+<body>
+
+    <h2></h2>
+
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        <label for="comment">Your Comment?</label>
+        <textarea name="comment" id="comment"></textarea>
+        <input type="submit">
+    </form>
+    <script>
+
+    ;(function(){
+
+        if (localStorage.getItem('name')) {
+            document.querySelector('h2').innerHTML = localStorage.getItem('name');
+        }
+
+        /*
+        // instead of Modernizr
+        var supportsStorage = function () {
+            try {
+                return 'localStorage' in window && window['localStorage'] !== null;
+            } catch(e) {
+                return false;
+            }
+        }
+
+        // check if browser supports localStorage
+        if (supportsStorage()) {
+            alert('supports');
+        }
+        */
+
+        //detect localStorage support
+        if (Modernizr.localstorage) {
+            // alert('Supports!');
+
+            // save comment every five seconds while writing in textarea
+            var comment = document.getElementById('comment'),
+                updateInterval;
+
+            // when page subsequently loads, detect storage, and apply value to textarea
+            !!localStorage.comment && (comment.value = localStorage.comment);
+
+            $('#comment')
+                .on('focus', function() {
+                    var $this = $(this);
+
+                    // set interval on saving data to localStorage
+                    updateInterval = setInterval(function() {
+                        localStorage.comment = $this.val();
+                    }, 5000);
+                })
+                // clear interval on blur
+                .on('blur', function() {
+                    clearInterval(updateInterval);
+                });
+
+            // get value from localStorage if exists
+            var name = document.getElementById('name');
+            name.value = localStorage.name || '';
+
+            // save value to localStorage if user provides it
+            name.addEventListener('blur', function() {
+                if(this.value) localStorage.setItem('name', this.value);
+            }, false);
+
+            // get value from localstorage when it change
+            window.addEventListener('storage', function() {
+                name.value = localStorage.name;
+            }, false);
+
+
+            // get object from localStorage
+            if(localStorage.info) {
+                console.log(JSON.parse(localStorage.info));
+            }
+
+            var o = {
+                first: 'Artur',
+                last: 'Rozwalak'
+            };
+
+            // save object to localStorage
+            Modernizr.localstorage && (localStorage.info = JSON.stringify(o));
+        };
+
+
+
+
+
+        //localStorage.setItem('name', 'Artur Rozwalak');
+
+        //localStorage.clear();
+
+
+        /*
+
+        // set data to localStorage
+        localStorage.setItem('name', 'Artur Rozwalak');
+        localStorage.name = 'Artur Rozwalak';
+        localStorage['name'] = 'Artur Rozwalak';
+
+        // get data from localStorage
+        localStorage.getItem('name');
+        localStorage.name;
+
+        // remove data from localStorage
+        localStorage.removeItem('name');
+        delete localStorage.name;
+
+        // clear locaLStorage
+        localStorage.clear();
+
+        */
+    })();
+
+    </script>
+
+
+    <form id="myForm">
+        <input type="text" name="title">
+        <input type="text" name="name">
+        <textarea name="comment" id="comment"></textarea>
+        <input type="checkbox" name="someCheck">
+        <input type="radio" name="someRadio">
+        <input type="submit">
+    </form>
+
+    <script>
+        (function(){
+
+            var form = $('#myForm');
+
+            if (localStorage.formData) {
+                (function bindStorageToForm() {
+                    var data = localStorage.formData,
+                        sp = data.split('&'),
+                        pair;
+
+                    console.log(sp);
+                    //title=Artur&name=Rozwalak&comment=my+new+comment&someCheck=on&someRadio=on
+
+                    $.each(sp, function(i, val) {
+                        pair = val.split('=');
+
+                        if (!pair[1]) return true; // continue
+
+                        if (pair[1] === 'on') {
+                            // radio or checkbox
+                            form[0][pair[0]].checked = true;
+                        }
+                        form[0][pair[0]].value = unescape(pair[1]).replace(/\+/g, ' ');
+
+                    });
+                })();
+            }
+
+            if (Modernizr.localstorage) {
+                setInterval(function(){
+                    localStorage.formData = form.serialize();
+                }, 3000);
+            }
+
+            // $('#myForm').submit(function(e) {
+            //     console.log($(this).serialize());
+            //     e.preventDefault();
+            // });
+        })();
+    </script>
+
+</body>
+</html>
