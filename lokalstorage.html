@@ -15,12 +15,22 @@
       })
     })
 </script>
+
+<script>
+jQuery(function(){
+    $("#txt").keyup(function() {
+      var value = $("#txt").val(); 
+      $("#lol").text(value);
+    });
+});
+</script>
+
 </head>
 <body>
 <center>
 
-<textarea data-store="1" autofocus placeholder="yaz..." style="width:90%;height:400px;"></textarea><br>
-<textarea data-store="2"></textarea><br>
+<textarea data-store="1" id="txt" autofocus placeholder="yaz..." style="width:90%;height:400px;"></textarea><br>
+<textarea data-store="2" id="lol"></textarea><br>
 <textarea data-store="3"></textarea><br>
 <textarea data-store="4"></textarea><br>
 <textarea data-store="5"></textarea><br>
