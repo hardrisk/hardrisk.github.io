@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang=en>
+<head>
+  <meta charset=utf-8>
+  <title>HTML5 Web Storage – localStorage</title></head>
+
+  <script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+  <style>
+  article, aside, details, figcaption, figure, footer, header,
+      hgroup, menu, nav, section { display: block; }
+
+  section { width: 440px; padding: 0 20px; }
+  #text {
+    width: 100%;
+    height: 272px;
+    overflow: none;
+    background: #FFE;
+    font-size: 14pt;
+    font-family: monospace;
+  }
+  .note { background: #FFC; font-style: italic; padding: 4px; }
+  #caption { color: #A00; }
+
+  input[type="button"] { float: right; }
+  </style>
+
+  <script>
+  $(document).ready(function() {
+    var host = location.hostname || '@home';
+    $('#caption').html('Items for ' + host);
+  });
+
+  $(window).load(function() {
+    updateItemsList();
+
+    $("input[value='Save']").click(function() {
+      var value = $('#text').val();
+      var key = $('#key').val();
+      localStorage.setItem(key, value);
+      updateItemsList();
+      $("#text").val('');
+    });
+
+    $("#items").bind("click", function(event) {
+       // makeItem: <p><b>name</b><input Load..<input Delete..
+       var key = $(event.target).closest('p').children('b').text();
+       var button = $(event.target).val();
+       switch (button) {
+         case "Load":
+           $('#text').val(localStorage.getItem(key));
+           break;
+         case "Delete":
+           localStorage.removeItem(key);
+           updateItemsList();
+           break;
+       };
+    });
+
+    // funkcje pomocnicze
+
+    function updateItemsList() {
+      var list = [];
+      for (var i = 0, len = localStorage.length; i < len; i++) {
+        list.push(makeItem(localStorage.key(i)));
+      }
+      $('#items').html(list.sort().join("\n"));
+    };
+
+    function makeItem(name) {
+       return '<p><b>' + name + '</b>' +
+         '<input type="button" value="Delete"><input type="button" value="Load"></p>';
+    };
+
+  });
+  </script>
+
+  <body>
+
+    <section>
+      <h2>HTML5 Web Storage – localStorage</h2>
+      <p class="note">Tested in Firefox 3.5+ and Google Chrome 9+</p>
+
+      <!-- The placeholder attribute on <input> and <textarea> elements provides
+           a hint to the user of what can be entered in the field.
+           The placeholder text **must not contain** carriage returns or line-feeds. -->
+      <textarea id="text" placeholder="Enter some text and press Save button."></textarea>
+      <p>Item name:
+        <input id="key" type="text" value="" placeholder="key">
+        <input type="button" value="Save">
+      </p>
+
+      <h3 id="caption">Items for this browser</h3>
+      <div id="items"></div>
+    </section>
+
+</body>
+</html>
