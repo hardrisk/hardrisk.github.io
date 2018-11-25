@@ -1,0 +1,41 @@
+javascript div gizle-göster
+
+<script>
+  var toggle = function() {
+  var mydiv = document.getElementById('lol');
+  if (mydiv.style.display === 'block' || mydiv.style.display === '')
+    mydiv.style.display = 'none';
+  else
+    mydiv.style.display = 'block'
+  }
+</script>
+
+
+<input type="button" value="btn" onclick="toggle()">
+<div id="lol" style="display:none">xdeeeee</div>
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
