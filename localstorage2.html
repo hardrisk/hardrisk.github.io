@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 page</title>
+</head>
+<body>
+
+<center>
+<input type="text" id="uname" value="">
+<button id="btnSave" onclick="saveData()">Save</button>
+<button onclick="localStorage.setItem('uname','');showLS()">Clear</button>
+<button onclick="showLS()">Contents</button>
+<p>Contents:<br>
+<pre id="contents"></pre>
+<script>
+function saveData(){
+  var lsNames = localStorage.getItem('uname'), 
+      arr = [];
+  if (!lsNames) { lsName = ''; }  // initialize if null
+  arr = lsNames.split(',');
+
+  arr.push(document.getElementById("uname").value);
+  lsNames = arr.join(',');
+  localStorage.setItem("uname", lsNames);
+  showLS();
+}
+function showLS() {
+  var ls = localStorage.getItem('uname');
+  document.getElementById('contents').innerHTML = "Your data is stored:\n"+ls.substr(1);
+}  
+</script>
+
+<p>https://www.google.com.tr/search?source=hp&ei=R9D_W8b6EqKyrgTXoYe4Dw&q=localstorage+multiple+values&btnK=Google%27da+Ara&oq=localstorage+mul&gs_l=psy-ab.3.0.0i19l6j0i22i10i30i19l2j0i22i30i19l2.1342.11226..13054...0.0..0.109.968.7j3......0....1..gws-wiz.....0..0j0i131j0i10.oDpZncKfriY</p>
+
+</center>
+</body>
+</html>
