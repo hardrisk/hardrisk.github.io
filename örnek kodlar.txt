@@ -21,7 +21,12 @@ javascript div gizle-göster
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+---
 
+
+<meta name="robots" content="noindex,nofollow,noarchive">
+<body text="#000000" bgcolor="#EEE8AA">
+<meta name="viewport" content="width=350,initial-scale=1">
 
 
 
