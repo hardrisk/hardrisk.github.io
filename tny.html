@@ -4,13 +4,10 @@
 a {font-size:9px}
 textarea {text-align:center;width:100%;height:95%;resize:none;margin:0;padding:0;font-size:11px;border-width:0;}
 </style>
-<body bgcolor="#ccc">
+<body onbeforeunload="return uyar()" bgcolor="#ccc">
 <center>
 <a href="https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fhardrisk%2Fhardrisk.github.io%2Fedit%2Fmaster%2F%25C3%25B6nemli.html">giriş</a><br>
 <textarea id="az" autofocus>
-
-
-
 
 
 
@@ -59,20 +56,8 @@ function ax() {
 }
 </script>
 
-<script type="text/javascript">
-var areYouReallySure = false;
-function areYouSure() {
-    if(allowPrompt){
-        if (!areYouReallySure && true) {
-            areYouReallySure = true;
-            var confMessage = "***************************************\n\n W A I T !!! \n\nBefore leaving our site, follow CodexWorld for getting regular updates on Programming and Web Development.\n\n\nCLICK THE *CANCEL* BUTTON RIGHT NOW\n\n***************************************";
-            return confMessage;
-        }
-    }else{
-        allowPrompt = true;
-    }
+<script>
+function uyar() {
+    return "Write something clever here...";
 }
-
-var allowPrompt = true;
-window.onbeforeunload = areYouSure;
 </script>
