@@ -1,0 +1,88 @@
+<html>
+<style>
+html{background-color:gray;}
+a{text-decoration:none}
+textarea{outline:none;border:2px solid;}
+.keyboardRow{text-align:center}
+.button{color:black;display:inline-block;border:3px groove #999;padding:10px;margin-bottom:5px;background-color:grey}
+</style>
+
+<script>
+function insertAtCaret(areaId, text) {
+  var txtarea = document.getElementById(areaId);
+  if (!txtarea) {
+    return;
+  }
+
+  var scrollPos = txtarea.scrollTop;
+  var strPos = 0;
+  var br = ((txtarea.selectionStart || txtarea.selectionStart == '0') ?
+    "ff" : (document.selection ? "ie" : false));
+  if (br == "ie") {
+    txtarea.focus();
+    var range = document.selection.createRange();
+    range.moveStart('character', -txtarea.value.length);
+    strPos = range.text.length;
+  } else if (br == "ff") {
+    strPos = txtarea.selectionStart;
+  }
+
+  var front = (txtarea.value).substring(0, strPos);
+  var back = (txtarea.value).substring(strPos, txtarea.value.length);
+  txtarea.value = front + text + back;
+  strPos = strPos + text.length;
+  if (br == "ie") {
+    txtarea.focus();
+    var ieRange = document.selection.createRange();
+    ieRange.moveStart('character', -txtarea.value.length);
+    ieRange.moveStart('character', strPos);
+    ieRange.moveEnd('character', 0);
+    ieRange.select();
+  } else if (br == "ff") {
+    txtarea.selectionStart = strPos;
+    txtarea.selectionEnd = strPos;
+    txtarea.focus();
+  }
+
+  txtarea.scrollTop = scrollPos;
+}
+</script>
+<center>
+<textarea autofocus cols="40" rows="6" id="pattes"></textarea><br><br><div class="keyboardrow">
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'q');return false;">q</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'w');return false;">w</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'e');return false;">e</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'r');return false;">r</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 't');return false;">t</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'y');return false;">y</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'u');return false;">u</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'ı');return false;">ı</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'o');return false;">o</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'p');return false;">p</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'ğ');return false;">ğ</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'ü');return false;">ü</a></div>
+<br><div class="keyboardrow">
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'a');return false;">a</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 's');return false;">s</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'd');return false;">d</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'f');return false;">f</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'g');return false;">g</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'h');return false;">h</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'j');return false;">j</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'k');return false;">k</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'l');return false;">l</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'ş');return false;">ş</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'i');return false;">i</a></div>
+<br><div class="keyboardrow">
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'z');return false;">z</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'x');return false;">x</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'c');return false;">c</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'v');return false;">v</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'b');return false;">b</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'n');return false;">n</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'm');return false;">m</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'ö');return false;">ö</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', 'ç');return false;">ç</a>
+<a class="button" href="#" onclick="insertAtCaret('pattes', '.');return false;">.</a></div>
+</center>
+<html>
