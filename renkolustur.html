@@ -1,0 +1,39 @@
+<center>
+<h1>My First Dynamic Web Page</h1>
+<p id="demo">Select a color:</p>
+<p>
+<button onclick="changeBackground('green')">Green</button>
+<button onclick="changeBackground('red')">Red</button>
+<button onclick="changeBackground('orange')">Orange</button>
+<button onclick="changeBackground('gray')">Gri</button>
+</p>
+<p>
+<input type="range" id="red" value="255" min="0" max="255" onchange="onSliderChanged()" style="background:red"> Red<br>
+<input type="range" id="green" value="255" min="0" max="255" onchange="onSliderChanged()" style="background:green"> Green<br>
+<input type="range" id="blue" value="255" min="0" max="255" onchange="onSliderChanged()" style="background:blue"> Blue
+</p>
+<a href="https://codepen.io/vanslooten/pen/qdqjqL">kaynak</a><br>
+</center>
+<script>
+var count = 0; // global variable
+
+function changeBackground(newColor) { // definition of function
+	document.bgColor = newColor;
+	count++;
+	document.getElementById("demo").innerHTML="We changed the color "+count+" times!";
+}
+
+function onSliderChanged() {
+	var r = document.getElementById("red").value;
+	var g = document.getElementById("green").value;
+	var b = document.getElementById("blue").value;
+	document.bgColor = "#"+dh(r)+dh(g)+dh(b);
+	document.getElementById("demo").innerHTML="rgb("+r+","+g+","+b+")="+document.bgColor;
+}
+
+function dh(d) { // decimal to hex conversion
+    var hex = Number(d).toString(16);
+    if (hex.length < 2) hex = "0" + hex;
+    return hex;
+}
+</script>
