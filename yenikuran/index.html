@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	
+<meta charset="UTF-8">
+<title>Kuran</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="slider.js"></script>
+
+<style>
+* { padding: 0; margin: 0; list-style: none; border: 0 }
+
+.slider {
+	overflow: hidden;
+	position: relative
+}
+.slider ul.slider_liste li {
+	font-size: 0;
+	width: 100%;
+	float: left
+}
+.slider ul.slider_liste li a img {
+	width: 100%
+}
+
+/* buton */
+a.onceki, a.sonraki {
+	width: 70px;
+	height: 70px;
+	text-decoration: none;
+	font: 32px/70px Arial;
+	color: #fff;
+	border-radius: 100px;
+	position: absolute;
+	top: 50%;
+	margin-top: -35px;
+	background: rgba(0, 0, 0, .5);
+	text-align: center
+}
+a.onceki { left: 20px }
+a.sonraki { right: 20px }
+a.onceki:hover, a.sonraki:hover { background: #000 }
+</style>
+
+</head>
+<body bgcolor="#ffffcc">
+
+<div class="slider">
+<a href="#" class="onceki"><</a>
+<a href="#" class="sonraki">></a>
+<ul class="slider_liste">
+<li>
+<a href="#">
+<img src="http://www.hayrat.com.tr/Kuran/Sayfalar/48.png" alt="">
+</a>
+</li>
+<li>
+<a href="#">
+<img src="http://www.hayrat.com.tr/Kuran/Sayfalar/49.png" alt="">
+</a>
+</li>
+<li>
+<a href="#">
+<img src="http://www.hayrat.com.tr/Kuran/Sayfalar/50.png" alt="">
+</a>
+</li>
+<li>
+<a href="#">
+<img src="http://www.hayrat.com.tr/Kuran/Sayfalar/51.png" alt="">
+</a>
+</li>
+<li>
+<a href="#">
+<img src="http://www.hayrat.com.tr/Kuran/Sayfalar/52.png" alt="">
+</a>
+</li>
+</ul>
+</div>
+
+</body>
+</html>
