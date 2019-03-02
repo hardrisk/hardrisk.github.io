@@ -13,29 +13,32 @@ textarea{border:2px solid black;outline:none;background-color:#333;color:white}
 <!--<button id="save">Clear</button>--><br><br><br><br><br><br>
 <a href="https://stackoverflow.com/questions/7892446/how-to-save-to-localstorage-from-textarea"></a><br>
 </center>
+
+<script>
+setInterval(function () {document.getElementById("save").click();}, 5000);
+</script>
+
 <script type="text/javascript">
-
 //check if "user" is in localStorage
-
 if (localStorage["user"])
 {
-    var user = localStorage["user"] ;
-    document.getElementById("user").value = user ;
+var user = localStorage["user"] ;
+document.getElementById("user").value = user ;
 }
 else
 {
-    document.getElementById("user").placeholder = "yazın" ;
-    console.log("user not found in localStorage")
+document.getElementById("user").placeholder = "yazın" ;
+console.log("user not found in localStorage")
 }
-
 //save entered gmail address
 document.getElementById("save").addEventListener("click", function ()
-    {
-        var user = document.getElementById("user").value ;
-        //localStorage["user"] = user ;
-        localStorage.setItem("user", user) ;
-        console.log("kaydedildi")
-    } , false);
+{
+var user = document.getElementById("user").value ;
+//localStorage["user"] = user ;
+localStorage.setItem("user", user) ;
+console.log("kaydedildi")
+} , false);
 </script>
+
 </body>
 </html>
