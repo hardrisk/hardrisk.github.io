@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>müzik keşfetme vs.</title>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 </head>
 <body bgcolor="gray">
 <style type="text/css">
@@ -20,48 +21,59 @@ input{width:150px;outline:none;background-color:#333;border:none;color:white;pad
 <th class="tg-0lax"></th>
 </tr>
 <tr>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
+<td class="tg-0lax"><input type="text" veri="1"></td>
+<td class="tg-0lax"><input type="text" veri="2"></td>
+<td class="tg-0lax"><input type="text" veri="3"></td>
+<td class="tg-0lax"><input type="text" veri="4"></td>
+<td class="tg-0lax"><input type="text" veri="5"></td>
 </tr>
 <tr>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
+<td class="tg-0lax"><input type="text" veri="6"></td>
+<td class="tg-0lax"><input type="text" veri="7"></td>
+<td class="tg-0lax"><input type="text" veri="8"></td>
+<td class="tg-0lax"><input type="text" veri="9"></td>
+<td class="tg-0lax"><input type="text" veri="10"></td>
 </tr>
 <tr>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
+<td class="tg-0lax"><input type="text" veri="11"></td>
+<td class="tg-0lax"><input type="text" veri="12"></td>
+<td class="tg-0lax"><input type="text" veri="13"></td>
+<td class="tg-0lax"><input type="text" veri="14"></td>
+<td class="tg-0lax"><input type="text" veri="15"></td>
 </tr>
 <tr>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
+<td class="tg-0lax"><input type="text" veri="16"></td>
+<td class="tg-0lax"><input type="text" veri="17"></td>
+<td class="tg-0lax"><input type="text" veri="18"></td>
+<td class="tg-0lax"><input type="text" veri="19"></td>
+<td class="tg-0lax"><input type="text" veri="20"></td>
 </tr>
 <tr>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
+<td class="tg-0lax"><input type="text" veri="21"></td>
+<td class="tg-0lax"><input type="text" veri="22"></td>
+<td class="tg-0lax"><input type="text" veri="23"></td>
+<td class="tg-0lax"><input type="text" veri="24"></td>
+<td class="tg-0lax"><input type="text" veri="25"></td>
 </tr>
 <tr>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
-<td class="tg-0lax"><input type="text"></td>
+<td class="tg-0lax"><input type="text" veri="26"></td>
+<td class="tg-0lax"><input type="text" veri="27"></td>
+<td class="tg-0lax"><input type="text" veri="28"></td>
+<td class="tg-0lax"><input type="text" veri="29"></td>
+<td class="tg-0lax"><input type="text" veri="30"></td>
 </tr>
 </table>
+
+<script>
+$(document).ready(function () {
+$("*[data-store]").each(function () {
+$(this).val(localStorage.getItem("item-" + $(this).attr("veri")));
+});
+$("*[data-store]").on("keyup", function (itm) {
+localStorage.setItem("item-" + $(this).attr("veri"), $(this).val());
+})
+})
+</script>
 
 </body>
 </html>
