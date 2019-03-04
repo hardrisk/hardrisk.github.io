@@ -66,10 +66,10 @@ input{width:150px;outline:none;background-color:#333;border:none;color:white;pad
 
 <script>
 $(document).ready(function () {
-$("*[data-store]").each(function () {
+$("*[veri]").each(function () {
 $(this).val(localStorage.getItem("item-" + $(this).attr("veri")));
 });
-$("*[data-store]").on("keyup", function (itm) {
+$("*[veri]").on("keyup", function (itm) {
 localStorage.setItem("item-" + $(this).attr("veri"), $(this).val());
 })
 })
