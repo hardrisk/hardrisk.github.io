@@ -1,0 +1,47 @@
+<html><!-- bu dosya lokalnotlarwithoutalert.html'in gelişmiş versiyonudur -->
+<head><title>local storage</title>
+<style>
+html{background-color:#242424}
+textarea{border:2px solid black;outline:none;background-color:#333;color:white}
+</style>
+</head>
+<body>
+<center>
+<textarea autofocus id="user" style="margin-bottom:4px;width:90%;height:400px">
+</textarea><br>
+<button id="save">Kaydet</button>
+<p id="asd"></p>
+<!--<button id="save">Clear</button>--><br><br><br><br><br><br>
+<a href="https://stackoverflow.com/questions/7892446/how-to-save-to-localstorage-from-textarea"></a><br>
+</center>
+
+<script>
+setInterval(function () {document.getElementById("save").click();}, 5000);
+</script>
+
+<script type="text/javascript">
+//check if "user" is in localStorage
+if (localStorage["user"])
+{
+var user = localStorage["user"] ;
+document.getElementById("user").value = user ;
+}
+else
+{
+document.getElementById("user").placeholder = "Yazın..." ;
+document.getElementById("asd").innerHTML = "localstorage boş";
+console.log("user not found in localStorage")
+}
+//save entered gmail address
+document.getElementById("save").addEventListener("click", function ()
+{
+var user = document.getElementById("user").value ;
+//localStorage["user"] = user ;
+localStorage.setItem("user", user) ;
+document.getElementById("asd").innerHTML = "kaydedildi";
+console.log("kaydedildi")
+} , false);
+</script>
+
+</body>
+</html>
