@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>tablo</title>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+</head>
+<body bgcolor="#666"><center>
+<style type="text/css">
+a{color:blue;outline:none;text-decoration:none;}
+.tg{border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:2px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:bold;padding:10px 5px;border-style:solid;border-width:2px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0lax{text-align:center;vertical-align:top}
+input{font-size:88%;width:175px;outline:none;background-color:#252425;color:#bdbdbd;border:none;padding:4px;}
+textarea{font-size:92%;outline:none;background-color:#333;border:2px solid black;padding:4px;color:#bdbdbd}
+</style>
+<table class="tg">
+<tr>
+<th class="tg-0lax">kişi</th>
+<th class="tg-0lax">bildiklerim</th>
+<th class="tg-0lax">az bildiklerim</th>
+<th class="tg-0lax">tarih</th>
+<th class="tg-0lax">link?</th>
+</tr>
+<tr>
+<td class="tg-0lax"><input type="text" veri="1"></td>
+<td class="tg-0lax"><input type="text" veri="2"></td>
+<td class="tg-0lax"><input type="text" veri="3"></td>
+<td class="tg-0lax"><input type="text" veri="4"></td>
+<td class="tg-0lax"><input type="text" veri="5"><a veri="5" id="5" href="">tık</a></td>
+</tr>
+<tr>
+<td class="tg-0lax"><input type="text" veri="6"></td>
+<td class="tg-0lax"><input type="text" veri="7"></td>
+<td class="tg-0lax"><input type="text" veri="8"></td>
+<td class="tg-0lax"><input type="text" veri="9"></td>
+<td class="tg-0lax"><input type="text" veri="10"><a  id="10" href="">tık</a></td>
+</tr>
+<tr>
+<td class="tg-0lax"><input type="text" veri="11"></td>
+<td class="tg-0lax"><input type="text" veri="12"></td>
+<td class="tg-0lax"><input type="text" veri="13"></td>
+<td class="tg-0lax"><input type="text" veri="14"></td>
+<td class="tg-0lax"><input type="text" veri="15"><a  id="15" href="">tık</a></td>
+</tr>
+<tr>
+<td class="tg-0lax"><input type="text" veri="16"></td>
+<td class="tg-0lax"><input type="text" veri="17"></td>
+<td class="tg-0lax"><input type="text" veri="18"></td>
+<td class="tg-0lax"><input type="text" veri="19"></td>
+<td class="tg-0lax"><input type="text" veri="20"><a  id="20" href="">tık</a></td>
+</tr>
+<tr>
+<td class="tg-0lax"><input type="text" veri="21"></td>
+<td class="tg-0lax"><input type="text" veri="22"></td>
+<td class="tg-0lax"><input type="text" veri="23"></td>
+<td class="tg-0lax"><input type="text" veri="24"></td>
+<td class="tg-0lax"><input type="text" veri="25"><a id="25" href="">tık</a></td>
+</tr>
+</table>
+
+<script>
+$(document).ready(function () {
+$("*[veri]").each(function () {
+$("#"+$(this).attr("veri")).text(localStorage.getItem("item-" + $(this).attr("veri")));
+});
+$("*[veri]").on("keyup", function (itm) {
+localStorage.setItem("item-" + $(this).attr("veri"), $(this).val());
+})
+})
+</script>
+
+</body>
+</html>
