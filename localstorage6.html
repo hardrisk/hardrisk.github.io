@@ -1,12 +1,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>HTML5 page</title>
+<title>HTML5 page</title><style>input{background-color:#333;outline:none;border:2px solid black;}</style>
 </head>
-<body bgcolor="gray" onload="showLS()">
+<body bgcolor="#333" onload="showLS()">
 
 <center>
-<input autofocus autocomplete="off" type="text" id="beniminputum"><br>
+<input autofocus placeholder="yaz" autocomplete="off" type="text" id="beniminputum"><br>
 <button id="btnSave" onclick="saveData()">kaydet</button>
 <button onclick="test();localStorage.setItem('veriler','');showLS()">tüm verileri sil</button>
 <button onclick="showLS()">verileri göster</button>
@@ -41,14 +41,13 @@ document.getElementById('contents').innerHTML = "kayıtlı veriler:\n"+ls.substr
 };
 function test() {
 var x;
-if (confirm("Are you sure?") == true) {
+if (confirm("Emin misin?") == true) {
 x = "You pressed OK!";
 } else {
 x = "You pressed Cancel!";
 }
 return x; 
 }
-test();
 </script>
 
 </center>
