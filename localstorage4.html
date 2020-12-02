@@ -1,0 +1,39 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 page</title>
+</head>
+<body bgcolor="gray">
+
+<center>
+<input autofocus autocomplete="off" type="text" id="beniminputum">
+<button id="btnSave" onclick="saveData()">Save</button>
+<button onclick="localStorage.setItem('veriler','');showLS()">Clear</button>
+<button onclick="showLS()">Contents</button>
+<p>Contents:<br>
+<pre id="contents"></pre>
+<script>
+function saveData(){
+var lsNames = localStorage.getItem('veriler'), 
+arr = [];
+if (!lsNames) { lsName = ''; }  // initialize if null
+arr = lsNames.split(',');
+
+arr.push(document.getElementById("beniminputum").value);
+lsNames = arr.join(',');
+localStorage.setItem("veriler", lsNames);
+showLS();
+var resetButton = document.getElementById("beniminputum");
+if(resetButton){
+resetButton.value= "";
+}
+}
+function showLS() {
+var ls = localStorage.getItem('veriler');
+document.getElementById('contents').innerHTML = "kayıtlı veriler:\n"+ls.substr(1);
+}  
+</script>
+
+</center>
+</body>
+</html>
