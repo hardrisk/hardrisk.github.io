@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="#333">
+<style>
+input{outline:none;border:2px solid black;}
+#elma{background-color:#333}
+</style>
+<script>
+function islem() {
+var armut = document.getElementById('icerik'); // armut=girilen veri
+var textValue = document.getElementById('elma').value; //
+textValue.replace(/^[ ]+|[ ]+$/g,'');
+armut.innerHTML = textValue;
+}
+</script>
+<center>
+<input autofocus id="elma" autocomplete="off" type="text" placeholder="yaz"><br>
+<input type="submit" value="yolla" onclick="islem();"><br><br>
+
+<div id="icerik">
+</div>
+
+</center>
+</body>
