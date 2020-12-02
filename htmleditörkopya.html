@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Kendi Yaptığım Editör</title>
+</head>
+
+<body bgcolor="#333">
+
+<script>
+function kelimeEkleGTSAlt(ekle){
+var metin = document.getElementById('kelime');
+metin.value = metin.value + ekle;
+metin.focus();
+}
+</script>
+
+<center>
+
+<input type="submit" value="<a href=&#34;" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<a href&#61;&#34;');" style="text-decoration: none">&nbsp;&nbsp;</a>  
+<input type="submit" value="&#34;></a>" href="javascript:;"onclick="javascript:kelimeEkleGTSAlt('&#34;></a>');" style="text-decoration: none">&nbsp;&nbsp;</a>
+<input type="submit" value="a href (newtab)" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<a target&#61;&#34;_blank&#34; href=&#34;');" style="text-decoration: none">&nbsp;&nbsp;</a>
+<input type="submit" value="<textarea>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<textarea>');" style="text-decoration: none">&nbsp;&nbsp;</a>
+<input type="submit" value="</textarea>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('</textarea>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+<input type="submit" value="<br>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<br>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+<input type="submit" value="<meta charset&#61;&#34;UTF-8&#34;>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<meta charset&#61;&#34;UTF&#45;8&#34;>');" style="text-decoration: none">&nbsp;&nbsp;</a>
+<input type="submit" value="<html>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<html>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+<input type="submit" value="</html>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('</html>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+<input type="submit" value="<head>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<head>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+<input type="submit" value="</head>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('</head>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+<br><br>
+<input type="submit" value="<body>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<body>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+<input type="submit" value="</body>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('</body>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+<input type="submit" value="<p>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<p>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+<input type="submit" value="</p>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('</p>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+<input type="submit" value="<hr>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<hr>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+<input type="submit" value="<base target&#61;&#34;_blank&#34;>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<base target&#61;&#34;_blank&#34;>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+<input type="submit" value="<style type&#61;&#34;text/css&#34;>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<style type&#61;&#34;text/css&#34;>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+<input type="submit" value="</style>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('</style>');" style="text-decoration: none">&nbsp;&nbsp;</a> 
+
+<br><br>
+
+<input type="submit" value="<style type&#61;&#34;text/css&#34;></style>" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<style type&#61;&#34;text/css&#34;></style>');" style="text-decoration: none">&nbsp;&nbsp;</a>
+<input type="submit" value="css dosyası ekle" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('<link href&#61;&#34;.css&#34; type&#61;&#34;text/css&#34; rel&#61;&#34;stylesheet&#34;/>');" style="text-decoration: none">&nbsp;&nbsp;</a>
+<input type="submit" value="initial scale" href="javascript:;" onclick="javascript:kelimeEkleGTSAlt('&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;');" style="text-decoration: none">&nbsp;&nbsp;</a>
+
+<br><br>
+
+<textarea style="background-color:transparent;overflow:auto;resize:none;outline:none;border:2px solid black;" name="kelime" placeholder="yaz..." autofocus id="kelime" rows="26" cols="100"></textarea>
+<a href="https://github.com/hardrisk/htmleditor/blob/master/index.html">bu dosyanın kopyası sayılır.</a><br>
+<br><br>
+
+<input type="submit" name="gonder" value="ARA" id="gonderID" class="l_ana" style="width:50px;">
+
+<br><br>
+</center>
+</body>
+</html>
