@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+function saveData(el) {
+localStorage.setItem(el.id, JSON.stringify(el.value));
+}
+
+function getData() {
+var inp = document.getElementById("inp");
+inp.value = JSON.parse(localStorage.getItem('inp')) || "";
+}
+</script>
+<body onload="getData()" bgcolor="#333"><center>
+<input id="inp" onchange="saveData(this)">
+
+kaynaklar:<br>
+<a href="https://stackoverflow.com/a/61085288">javascript - Auto-save all inputs value to localStorage and restore them on page reload - Stack Overflow</a><br>
+<a href="https://stackoverflow.com/questions/61203335/serialize-a-form-to-localstorage-restore-it-after-page-reload-without-jquery">javascript - Serialize a form to localStorage / restore it after page reload (without jQuery) - Stack Overflow</a><br>
+
+</center>
+</body>
+</html>
