@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="#333">
+
+<textarea id="myTextarea">
+342 Alvin Road
+Ducksburg</textarea>
+
+<br>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+<script>
+var test = document.getElementById("myTextarea");
+function myFunction() {
+test.replace(/^[ ]+|[ ]+$/g,'');
+document.write(test);
+}
+</script>
+
+</body>
+</html>
+
+
+
+<script>
+//var adres = "  No.255 Colombo  ";
+//adres.replace(/^[ ]+|[ ]+$/g,'');
+//document.write(adres);
+</script>
