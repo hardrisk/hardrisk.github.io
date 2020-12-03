@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Read Text File</title>
+</head>
+
+<body bgcolor="#333"><center>
+<input type="file" name="inputfile" id="inputfile">
+<br>
+<pre id="output"></pre>
+<script>
+document.getElementById('inputfile')
+.addEventListener('change', function() {
+var fr=new FileReader();
+fr.onload=function(){
+document.getElementById('output')
+.textContent=fr.result;
+}
+fr.readAsText(this.files[0]);
+})
+</script>
+<a href="https://www.geeksforgeeks.org/how-to-read-a-local-text-file-using-javascript/?ref=leftbar-rightbar">kaynak</a><br>
+</center></body>
+</html>
