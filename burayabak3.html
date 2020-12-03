@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body onload="getData()" bgcolor="#333"><center>
+<style>
+textarea{outline:none;background-color:transparent;width:80%;height:150px;border:2px solid black;text-align:center}
+</style>
+<textarea id="test" onchange="saveData(this)"></textarea><br>
+kayıtlı veri:<div id="elma"></div>
+
+bu sayfa <a href="https://hardrisk.github.io/butonsuzlocalstorage.html">butonsuzlocalstorage.html</a> dosyasının kopyasıdır.<br>
+
+<script>
+function saveData(el) {
+localStorage.setItem(el.id, JSON.stringify(el.value));
+}
+
+function getData() {
+var karpuz = document.getElementById("test");
+karpuz.value = JSON.parse(localStorage.getItem('test')) || "";
+var armut = document.getElementById("elma");
+armut.innerHTML = JSON.parse(localStorage.getItem('test')) || "";
+}
+</script>
+
+</center>
+</body>
+</html>
