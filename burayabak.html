@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="gray">
+<style>
+textarea{height:40px;width:85%;background-color:#333;outline:none}
+</style>
+<button onclick="olay()">Tıkla</button>
+
+       <p id="demo1">asd1</p>
+       <p id="demo2">asd2</p>
+       <p id="demo3">asd3</p>
+       <p id="demo4">verinin geldiği yer=textarea no 1</p>
+       <p id="demo5">verinin geldiği yer=textarea no 2</p>
+       <p id="demo6">verinin geldiği yer=textarea no 3</p>
+       <p id="demo7">verinin geldiği yer=textarea no 4</p>
+       <p id="tok1">boşluk1</p>
+       <p id="tok2"><a href="https://google.com">google</a></p>
+       <p id="tok3"><a href="https://facebook.com">face</a></p>
+<textarea id="tok4"><a href="https://twitter.com">twitter</a></textarea>1
+<textarea id="tok5"></textarea>2
+<textarea id="tok6"></textarea>3
+<textarea id="tok7"></textarea>4
+<script>
+//alttaki satır var elma1 = ("armut"); da olabilirdi.
+var elma1 = document.getElementById("tok1").innerText;
+var elma2 = document.getElementById("tok2").innerText;
+var elma3 = document.getElementById("tok3").innerHTML;
+var elma4 = document.getElementById("tok4").innerHTML;
+var elma5 = document.getElementById("tok5");
+var elma6 = document.getElementById("tok6").innerHTML;
+var elma7 = document.getElementById("tok7").innerHTML;
+function olay() {
+document.getElementById("demo1").innerHTML = elma1;
+document.getElementById("demo2").innerHTML = elma2 + " >>> aşağıdaki linkin innerText hali";
+document.getElementById("demo3").innerHTML = elma3 + " >>> aşağıdaki linkin innerHTML hali";
+document.getElementById("demo4").innerHTML = elma4;
+document.getElementById("demo5").innerHTML = elma5.value;
+document.getElementById("demo6").innerHTML = elma6.value;
+document.getElementById("demo7").innerHTML = elma7.value;
+}
+</script>
+
+</body>
+</html>
