@@ -1,0 +1,51 @@
+<html>
+<head><title>local storage</title>
+<style>
+html{background-color:#242424}
+textarea{border:2px solid black;outline:none;background-color:#333;color:white}
+</style>
+</head>
+<body>
+<center>
+<textarea autofocus id="mytextarea" style="margin-bottom:4px;width:90%;height:400px">
+</textarea><br>
+<button id="save">Kaydet</button>
+<!--<button id="save">Clear</button>--><br><br><br><br><br><br>
+<a href="https://stackoverflow.com/questions/7892446/how-to-save-to-localstorage-from-textarea"></a>
+<p>NOT: textarea içine yazılanlar her 5 saniyede bir kaydolur.</p>
+<div id="muz1"></div>
+<div id="muz2"></div>
+<div id="muz3"></div>
+<a href="https://hardrisk.github.io/lokalnotlarwithoutalert.html">lokalnotlarwithoutalert.html/a> dosyasının gelişmiş halidir.<br>
+</center>
+<script>
+setInterval(function () {document.getElementById("save").click();}, 5000);
+</script>
+
+<script>
+//check if "localdekiveri" is in localStorage
+if (localStorage["localdekiveri"])
+{
+var user = localStorage["localdekiveri"];
+document.getElementById("mytextarea").value = user;
+document.getElementById("muz1").innerHTML = user;
+document.getElementById("muz2").innerHTML = user + " patates";
+document.getElementById("muz3").innerHTML = "patates " + user;
+}
+else
+{
+document.getElementById("mytextarea").placeholder = "yazın...";
+console.log("localdekiveri not found in localStorage")
+}
+//save entered value
+document.getElementById("save").addEventListener("click", function ()
+{
+var user = document.getElementById("mytextarea").value;
+//localStorage["localdekiveri"] = user ;
+localStorage.setItem("localdekiveri", user);
+console.log("kaydedildi")
+} , false);
+</script>
+
+</body>
+</html>
