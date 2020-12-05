@@ -4,13 +4,21 @@
 </head>
 <body bgcolor="#333"><center>
 <style>
-textarea{outline:none;background-color:transparent;width:80%;height:95px;border:2px solid black;text-align:center}
+textarea{outline:none;background-color:transparent;width:80%;height:70px;border:2px solid black;text-align:center}
 </style>
-<p>github'da görüntülenen dosyayı github pages üzerinde açmak:</p><textarea>javascript:u=location.href;if(u.match('github\.com')){if(u.match('github\.com')){u=u.replace('blob/master/','')}if(u.match('github\.com')){u=u.replace('github.com/hardrisk','')}else{u=u.replace('github\.com/hardrisk','test')}window.location=u;}else{alert('Not a github URL.')}</textarea><br>
-<p>old.reddit.com'a çevirmek:</p><textarea>
+<p>github'da görüntülenen dosyayı github pages üzerinde açmak:</p><textarea readonly>javascript:u=location.href;if(u.match('github\.com')){if(u.match('github\.com')){u=u.replace('blob/master/','')}if(u.match('github\.com')){u=u.replace('github.com/hardrisk','')}else{u=u.replace('github\.com/hardrisk','test')}window.location=u;}else{alert('Not a github URL.')}</textarea><br>
+<p>www.reddit.com'u old.reddit.com'a çevirmek:</p><textarea readonly>
 javascript:u=location.href;if(u.match('reddit\.com')){if(u.match('www\.reddit')){u=u.replace('www\.reddit','old.reddit')}else{u=u.replace('old\.reddit','www.reddit')}window.location=u;}else{alert('Not a Reddit URL.')}
 </textarea><br>
-
+<p>url2html:</p><textarea readonly>
+javascript:(function(s){try{s=document.selection.createRange().text}catch(_){s=document.getSelection()}prompt('','<a href="' +location+ "\">"+''+document.title+'</a>'+s)})()
+</textarea><br>
+<p>url2html without sondaki "+s":</p><textarea readonly>
+javascript:(function(s){try{s=document.selection.createRange().text}catch(_){s=document.getSelection()}prompt('','<a href="' +location+ "\">"+''+document.title+'</a>')})()
+</textarea><br>
+<p>url:</p><textarea readonly>
+javascript:(function(s){try{s=document.selection.createRange().text}catch(_){s=document.getSelection()}prompt('','' +location+ ""+'')})()
+</textarea><br>
 
 </center>
 </body>
