@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body bgcolor="#333">
+
+<textarea id="user" style="margin-bottom: 4px; width: 250px; height: 20px">
+</textarea><br>
+<button id="save">Save</button>
+<button id="dave">Clear</button>
+
+<script>
+//check if "user" is in localStorage
+if (localStorage[".user"])
+{
+var user = localStorage[".user"] ;
+document.getElementById("user").value = user;
+alert("veri açıldı")
+}
+else
+{
+document.getElementById("user").placeholder = "your gmail address";
+console.log("user no found in localStorage")
+}
+//save entered mail address
+document.getElementById("save").addEventListener("click", function ()
+{
+var user = document.getElementById("user").value;
+//localStorage[".user"] = user ;
+localStorage.setItem("user", user);
+alert("veri kaydedildi");
+console.log("veri kaydedildi")
+} , false);
+</script>
+</body>
+</html>
