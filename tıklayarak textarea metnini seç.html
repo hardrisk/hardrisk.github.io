@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body bgcolor="gray"><center>
+
+
+<p>tıklayarak textareanın içindeki metni seçmek:</p>
+
+
+
+Textarea 1:<br>
+<textarea id="asd1" onClick="SelectAll('asd1');">merhaba</textarea><br>
+Textarea 2:<br>
+<textarea id="asd2" onClick="SelectAll('asd2');">naber</textarea><br>
+
+
+
+
+<script>
+function SelectAll(id)
+{
+document.getElementById(id).focus();
+document.getElementById(id).select();
+}
+</script>
+
+
+<a href="https://stackoverflow.com/questions/7313786/highlight-all-text-in-textarea">kaynak</a><br>
+
+
+</center>
+</body>
+</html>
