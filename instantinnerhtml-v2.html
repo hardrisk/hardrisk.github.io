@@ -13,17 +13,17 @@ button{outline:none;border:2px solid black;margin-bottom:5px;}
 <body bgcolor="#333"><center>
 
 <button id="dene">uygula</button><br>
-<textarea id='editor'></textarea>
+<textarea onkeyup"asd();" id="editor"></textarea>
 <div id="edit"></div>
+
 
 </center>
 <script>
 var edit = document.getElementById('edit');
 var editor = document.getElementById('editor');
 var trigger = document.getElementById('dene');
-
 trigger.onclick = function() {
-edit.innerHTML = editor.value;  
+edit.innerHTML = editor.value;
 };
 </script>
 </body>
