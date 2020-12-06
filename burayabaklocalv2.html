@@ -1,0 +1,30 @@
+<html>
+<head>
+</head>
+<style>
+textarea{outline:none;border:2px solid black;width:250px;height:100px;background-color:transparent}
+input{outline:none;border:2px solid black;}
+</style>
+<body onload="fonk2();" bgcolor="#333"><center>
+<textarea autofocus id="textline"></textarea><br><br>
+<button id="rememberer" onclick='fonk1()'>kaydet</button>
+<button id="recaller" onclick='fonk2()'>görüntüle</button>
+<p id="recalledtext"></p>
+
+
+
+<br><br><br><br><br>
+<script>
+function fonk1() { //remember code var
+texttosave = document.getElementById('textline').value;
+localStorage.setItem('elmalıturta', texttosave);
+}
+
+function fonk2() { //recall code
+document.getElementById('recalledtext').innerHTML = localStorage.getItem('elmalıturta');
+document.getElementById('textline').value = localStorage.getItem('elmalıturta');
+}
+</script>
+</center>
+</body>
+</html>
