@@ -1,0 +1,52 @@
+<html>
+<head><title>multiple textarea localstorage</title></head>
+<body bgcolor="#333"><center>
+
+<style>
+textarea{outline:none;background-color:transparent;border:2px solid black;margin-bottom:4px;width:550px;height:200px}
+button{outline:none;background-color:transpaent;border:2px solid black;}
+</style>
+<button id="save">Save</button><br>
+<textarea id="textaream1"></textarea><br><button id="elma1">sil</button><br>
+<textarea id="textaream2"></textarea><br><button id="elma2">sil</button><br><hr><br><br>
+<div id="divim1"></div><br>
+<div id="divim2"></div><br>
+
+
+<script>
+document.getElementById("elma1").addEventListener("click", function() {
+localStorage.removeItem("kullanici1");
+});
+document.getElementById("elma2").addEventListener("click", function() {
+localStorage.removeItem("kullanici2");
+});
+if (localStorage["kullanici1", "kullanici2"])                  // "kullanici1" ve "kullanici2" adındaki veriler localstorage'da bulunuyorsa şunları yap:
+{
+var user1 = localStorage["kullanici1"] ;                       // localstoragedaki "kullanici1" öğesine "user1" dedik
+document.getElementById("textaream1").value = user1;           // textaream1 içine user1'i("kullanici1" verisini) yerleştirdik
+var user2 = localStorage["kullanici2"] ;                       // localstoragedaki "kullanici2" öğesine "user2" dedik
+document.getElementById("textaream2").value = user2;           // textaream2 içine user2'yi("kullanici2" verisini) yerleştirdik
+
+document.getElementById("divim1").innerHTML = user1;           // "divim1" içine "user1" değişkenini yani "kullanici1" localstorage verisini yerleştirdik
+document.getElementById("divim2").innerHTML = user2;           // "divim2" içine "user2" değişkenini yani "kullanici2" localstorage verisini yerleştirdik
+// alert("kayıtlı veriler bulundu") - OPSİYONEL
+}
+else
+{
+document.getElementById("textaream1").placeholder = "yaz";
+document.getElementById("textaream2").placeholder = "yaz";
+console.log("localstorageda kullaniciadi1 verisi bulunamadi")  // konsola loglama - OPSİYONEL
+}
+document.getElementById("save").addEventListener("click", function ()
+{
+var user1 = document.getElementById("textaream1").value;
+localStorage.setItem("kullanici1", user1) ;
+var user2 = document.getElementById("textaream2").value;
+localStorage.setItem("kullanici2", user2) ;
+alert("kaydedildi");                                           // uyarı penceresi - OPSİYONEL
+location.reload();                                             // sayfayı yenileme kodu - OPSİYONEL
+console.log("veriler kaydedildi")                              // konsola loglama - OPSİYONEL
+} , false);
+</script></center>
+</body>
+</html>
