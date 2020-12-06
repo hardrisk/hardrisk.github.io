@@ -1,0 +1,53 @@
+<html>
+<head>
+<base target="_blank">
+<style>
+a:link{color:darkblue;text-decoration:none;}
+a:visited{color:darkblue;}
+a:hover{color:blue;text-decoration:underline}
+a:active{color:red;}
+textarea{outline:none;border:2px solid black;width:450px;height:400px;background-color:transparent}
+button{outline:none;border:2px solid black;}
+</style>
+</head>
+
+
+<body onload="veriyicek();" bgcolor="#333"><center>
+
+<textarea autofocus onkeyup="kaydet()" id="armut"></textarea><br><br>
+<button id="" onclick='kaydet()'>kaydet</button>
+<button id="" onclick='veriyicek()'>görüntüle</button>
+<button id="" onclick='veriyisil()'>sil</button>
+<p id="sirkedivi"></p>
+
+
+<br><br><br><br><br>
+<script>
+function kaydet() { //remember code var
+texttosave = document.getElementById('armut').value;
+localStorage.setItem('elmalıturta', texttosave);
+var existing = localStorage.getItem('elmalıturta');
+var data = existing ? existing + '' : 'tuna';
+localStorage.setItem('elmalıturta', data);
+}
+
+function veriyicek() { //recall code
+document.getElementById('sirkedivi').innerHTML = localStorage.getItem('elmalıturta');
+document.getElementById('armut').value = localStorage.getItem('elmalıturta');
+}
+
+function veriyisil() {
+localStorage.removeItem("elmalıturta");
+document.getElementById('armut').value = "";
+alert("localstoragedaki veri silindi");
+// document.getElementById('armut').focus;
+}
+</script>
+
+
+
+
+
+</center>
+</body>
+</html>
