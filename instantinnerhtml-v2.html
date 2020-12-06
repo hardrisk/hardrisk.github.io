@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+a:link{color:darkblue;text-decoration:none;}
+a:visited{color:darkblue;}
+a:hover{color:blue;text-decoration:underline}
+a:active{color:red;}
+textarea{outline:none;border:2px solid black;width:450px;height:400px;background-color:transparent}
+button{outline:none;border:2px solid black;margin-bottom:5px;}
+</style>
+</head>
+<body bgcolor="#333"><center>
+
+<button id="dene">uygula</button><br>
+<textarea id='editor'></textarea>
+<div id="edit"></div>
+
+</center>
+<script>
+var edit = document.getElementById('edit');
+var editor = document.getElementById('editor');
+var trigger = document.getElementById('dene');
+
+trigger.onclick = function() {
+edit.innerHTML = editor.value;  
+};
+</script>
+</body>
+</html>
