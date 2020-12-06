@@ -1,0 +1,51 @@
+<html>
+<head>
+</head>
+<style>
+textarea{outline:none;border:2px solid black;width:250px;height:100px;background-color:transparent}
+input{outline:none;border:2px solid black;}
+</style>
+<body onload="veriyicek();" bgcolor="#333"><center>
+
+<textarea autofocus onkeyup="asd()" id="elma" cols="60" rows="10"></textarea><p>sadece alttaki textareanın içeriği localstorage'a kaydolur.</p>
+<textarea id="armut"></textarea><br><br>
+<button id="" onclick='kaydet()'>kaydet</button>
+<button id="" onclick='veriyicek()'>görüntüle</button>
+<button id="" onclick='veriyisil()'>sil</button>
+<p id="sirkedivi"></p>
+
+
+
+<br><br><br><br><br>
+<script>
+function asd() {
+var x = document.getElementById("elma").value;
+document.getElementById("armut").value = x;
+}
+
+function kaydet() { //remember code var
+texttosave = document.getElementById('armut').value;
+localStorage.setItem('elmalıturta', texttosave);
+var existing = localStorage.getItem('elmalıturta');
+var data = existing ? existing + ' ' : 'tuna';
+localStorage.setItem('elmalıturta', data);
+}
+
+function veriyicek() { //recall code
+document.getElementById('sirkedivi').innerHTML = localStorage.getItem('elmalıturta');
+document.getElementById('armut').value = localStorage.getItem('elmalıturta');
+}
+
+function veriyisil() {
+localStorage.removeItem("elmalıturta");
+alert("localstoragedaki veri silindi");
+}
+</script>
+
+
+
+
+
+</center>
+</body>
+</html>
