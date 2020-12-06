@@ -1,0 +1,42 @@
+<html>
+<head>
+</head>
+<style>
+textarea{outline:none;border:2px solid black;width:250px;height:100px;background-color:transparent}
+input{outline:none;border:2px solid black;}
+</style>
+<body onload="veriyicek();" bgcolor="#333"><center>
+<textarea autofocus id="textline"></textarea><br><br>
+<button id="" onclick='kaydet()'>kaydet</button>
+<button id="" onclick='veriyicek()'>görüntüle</button>
+<button id="" onclick='veriyisil()'>sil</button>
+<p id="sirke"></p>
+
+
+
+<br><br><br><br><br>
+<script>
+function kaydet() { //remember code var
+texttosave = document.getElementById('textline').value;
+localStorage.setItem('elmalıturta', texttosave);
+
+var existing = localStorage.getItem('elmalıturta');
+var data = existing ? existing + ' ' : 'tuna';
+localStorage.setItem('elmalıturta', data);
+}
+
+function veriyicek() { //recall code
+document.getElementById('sirke').innerHTML = localStorage.getItem('elmalıturta');
+document.getElementById('textline').value = localStorage.getItem('elmalıturta');
+}
+
+function veriyisil() {
+localStorage.removeItem("elmalıturta");
+alert("veri silindi");
+}
+</script>
+</center>
+
+<!-- <a href="https://stackoverflow.com/questions/45525062/save-data-to-localstorage-and-display-it-as-innerhtml">kaynak</a><br> -->
+</body>
+</html>
