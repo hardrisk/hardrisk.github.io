@@ -1,9 +1,9 @@
 <html>
-<head><title>Extension Options</title></head>
+<head><title>multiple textarea localstorage</title></head>
 <body bgcolor="#333"><center>
 
 <style>
-textarea{outline:none;background-color:transparent;border:2px solid black;margin-bottom:4px;width:450px;height:200px}
+textarea{outline:none;background-color:transparent;border:2px solid black;margin-bottom:4px;width:550px;height:200px}
 button{outline:none;background-color:transpaent;border:2px solid black;}
 </style>
 
@@ -14,29 +14,29 @@ button{outline:none;background-color:transpaent;border:2px solid black;}
 
 <script>
 //check if "user" is in localStorage
-if (localStorage["userlocal1"])
+if (localStorage["kullanici1"])
 {
-var userjesdeg1 = localStorage["userlocal1"] ;
-document.getElementById("textaream1").value = userjsdeg1 ;
-alert("addsd")
+var user1 = localStorage["kullanici1"] ; //localstoragedaki "kullanici1" öğesine "user" dedik
+document.getElementById("textaream1").value = user1;//textaream1 içine user1'i("kullanici1" verisini) yerleştirdik
+var user2 = localStorage["kullanici2"] ; //localstoragedaki "kullanici2" öğesine "user2" dedik
+document.getElementById("textaream2").value = user2;//textaream2 içine user2'yi("kullanici2" verisini) yerleştirdik
+//alert("asd")
 }
 else
 {
-document.getElementById("textaream1").placeholder = "yaz" ;
+document.getElementById("textaream1").placeholder = "yaz";
+document.getElementById("textaream2").placeholder = "yaz";
 console.log("user no found in localStorage")
 }
-
 document.getElementById("save").addEventListener("click", function ()
 {
-var userjsdeg1 = document.getElementById("textaream1").value ;
-//localStorage["user"] = user ;
-localStorage.setItem("userlocal1", userjsdeg1) ;
+var user1 = document.getElementById("textaream1").value;
+localStorage.setItem("kullanici1", user1) ;
+var user2 = document.getElementById("textaream2").value;
+localStorage.setItem("kullanici2", user2) ;
 alert("kaydedildi") ;
 console.log("gmail id saved")
 } , false);
 </script></center>
 </body>
 </html>
-
-userjsdeg1
-userlocal1
