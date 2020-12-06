@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<body bgcolor="#333">
+<style>
+textarea{border:2px solid black;outline:none;background-color:transparent}
+</style><center>
+
+
+
+<textarea autofocus onkeyup="asd()" id="elma" cols="60" rows="10"></textarea><br>
+<button type="button" onclick="asd()" style="margin-top:5px;margin-bottom:5px;">uygula</button><br>
+<textarea id="armut" cols="60" rows="10"></textarea>
+
+
+<script>
+function asd() {
+var x = document.getElementById("elma").value;
+document.getElementById("armut").innerHTML = x;
+}
+</script>
+</center>
+</body>
+</html>
