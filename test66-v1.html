@@ -9,17 +9,18 @@ button{outline:none;background-color:transpaent;border:2px solid black;}
 
 <textarea id="textaream1"></textarea><br>
 <textarea id="textaream2"></textarea><br>
+<div id="divim1"></div><br>
+<div id="divim2"></div><br>
 <button id="save">Save</button>
-<!--<button id="save">Clear</button>-->
 
 <script>
-//check if "user" is in localStorage
-if (localStorage["kullanici1"])
+if (localStorage["kullanici1"])//"kullanici1" adındaki veri localStorage'da bulunuyorsa şunları yap:
 {
-var user1 = localStorage["kullanici1"] ; //localstoragedaki "kullanici1" öğesine "user" dedik
+var user1 = localStorage["kullanici1"] ; //localstoragedaki "kullanici1" öğesine "user1" dedik
 document.getElementById("textaream1").value = user1;//textaream1 içine user1'i("kullanici1" verisini) yerleştirdik
 var user2 = localStorage["kullanici2"] ; //localstoragedaki "kullanici2" öğesine "user2" dedik
 document.getElementById("textaream2").value = user2;//textaream2 içine user2'yi("kullanici2" verisini) yerleştirdik
+
 //alert("asd")
 }
 else
