@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="#333">
+<style>
+input{outline:none;border:2px solid black;}
+textarea{color:black;background-color:#333;outline:none;border:2px solid black;width:70%;height:350px;text-align:center}
+a:link{color:blue;text-decoration:none;}
+a:visited{color:blue;text-decoration:none;}
+a:hover{color:blue;text-decoration:underline}
+</style>
+<center>
+
+<textarea onkeyup="islem();" autofocus id="elma" placeholder=""></textarea><br>
+<input type="submit" value="yolla" onclick="islem();"><br><br>
+
+<div id="icerik">
+</div>
+
+
+<script>
+function islem() {
+var armut = document.getElementById('icerik');
+var tuzluk = document.getElementById('elma').value;
+armut.innerHTML = tuzluk;
+}
+</script>
+
+</center>
+</body>
+</html>
