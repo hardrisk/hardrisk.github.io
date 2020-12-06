@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+a:link{color:darkblue;text-decoration:none;}
+a:visited{color:darkblue;}
+a:hover{color:blue;text-decoration:underline}
+a:active{color:red;}
+textarea{outline:none;border:2px solid black;width:450px;height:400px;background-color:transparent}
+button{outline:none;border:2px solid black;}
+</style>
 </head>
 <body bgcolor="#333"><center>
 
-<button id="trigger">Apply code</button><br><br>
+<button id="trigger">uygula</button><br><br>
 <div id="edit"><textarea id='editor'></textarea></div>
 
-<a href="https://stackoverflow.com/questions/24360545/write-html-code-in-div-and-see-result-instantly?noredirect=1&lq=1">kaynak</a><br></center>
+<a style="margin-top:500px;" href="https://stackoverflow.com/questions/24360545/write-html-code-in-div-and-see-result-instantly?noredirect=1&lq=1">kaynak</a><br></center>
 <script>
 var edit = document.getElementById('edit');
 var editor = document.getElementById('editor');
-
 var trigger = document.getElementById('trigger');
 
 trigger.onclick = function() {
