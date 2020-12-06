@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+textarea{border:2px solid black;outline:none;background-color:transparent}
+</style>
+</head>
+<body bgcolor="#333">
+<center>
+
+<form id="ter">
+Input Text:<br>
+<textarea onkeyup="kahve();" autofocus name="test1" cols="60" rows="10"></textarea><br>
+<input onclick="javascript:kahve();" style="margin-top:5px;margin-bottom:5px;" type="button" value="uygula"><br>
+Output Text:<br>
+<textarea name="yemek" cols="60" rows="10"></textarea><br>
+</form>
+
+<script>
+function kahve(){
+limon = document.getElementById('ter').test1.value;
+document.getElementById('ter').yemek.value = limon;
+}
+</script>
+
+</center>
+</body>
+</html>
