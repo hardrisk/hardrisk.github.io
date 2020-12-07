@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="gray">
+
+<div id="result"></div><br><br><br><br><br><br><br>
+<a href="https://stackoverflow.com/questions/51303211/how-to-add-item-to-local-storage">kaynak</a><br>
+
+<script>
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+// Store
+localStorage.setItem("list", "Jason");
+appendToStorage("list", "David");
+appendToStorage("adam", "enes"); // sayfayı her yenilediğinde adam diye bir key oluşturup içine enes yazar.
+
+// Retrieve
+var asd = localStorage.getItem("list");
+document.getElementById("result").innerHTML = "<p style='color:blue'>" +asd+ "</p>";
+} else {
+document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+
+function appendToStorage(name, data){
+var old = localStorage.getItem(name);
+if(old === null) old = "";
+localStorage.setItem(name, old + data);
+}
+</script>
+
+</body>
+</html>
