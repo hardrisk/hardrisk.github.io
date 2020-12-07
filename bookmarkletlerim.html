@@ -6,7 +6,9 @@
 <style>
 textarea{outline:none;background-color:transparent;width:80%;height:70px;border:2px solid black;text-align:center}
 </style>
-<p>github'da görüntülenen dosyayı github pages üzerinde açmak:</p><textarea onclick="this.focus();this.select();document.execCommand('copy')" readonly>javascript:u=location.href;if(u.match('github\.com')){if(u.match('github\.com')){u=u.replace('blob/master/','')}if(u.match('github\.com')){u=u.replace('github.com/hardrisk','')}else{u=u.replace('github\.com/hardrisk','test')}window.location=u;}else{alert('Not a github URL.')}</textarea><br>
+<p>github'da görüntülenen "github pages" reposunu github'da görüntüle:</p><textarea onclick="this.focus();this.select();document.execCommand('copy')" readonly>javascript:u=location.href;if(u.match('github\.com')){if(u.match('github\.com')){u=u.replace('blob/master/','')}if(u.match('github\.com')){u=u.replace('github.com/hardrisk','')}else{u=u.replace('github\.com/hardrisk','test')}window.location=u;}else{alert('Not a github URL.')}</textarea><br>
+<p>github'da görüntülenen "herhangi bir" repoyu github pages'da görüntüle:</p><textarea onclick="this.focus();this.select();document.execCommand('copy')" readonly>javascript:u=location.href;if(u.match('github\.com')){if(u.match('github\.com')){u=u.replace('blob/master/','')}if(u.match('github\.com')){u=u.replace('github.com/hardrisk','hardrisk.github.io')}else{u=u.replace('github\.com/hardrisk','test')}window.location=u;}else{alert('Not a github URL.')}
+</textarea><br>
 <p>www.reddit.com'u old.reddit.com'a çevirmek:</p><textarea onclick="this.focus();this.select();document.execCommand('copy')" readonly>
 javascript:u=location.href;if(u.match('reddit\.com')){if(u.match('www\.reddit')){u=u.replace('www\.reddit','old.reddit')}else{u=u.replace('old\.reddit','www.reddit')}window.location=u;}else{alert('Not a Reddit URL.')}
 </textarea><br>
