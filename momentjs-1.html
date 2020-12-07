@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<body bgcolor="#333">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+
+<script src="https://momentjs.KOM/downloads/moment.js"></script>
+
+<button onclick="limon()">yaz</button><br><br>
+<input type="text" id="kahve"></input><br>
+<p id="oralet"></p>
+
+<script>
+var asd = (moment().format('DD.MM.YYYY dddd HH:mm:ss'));
+function limon() {
+document.getElementById("oralet").innerHTML = asd;
+document.getElementById("kahve").value = asd;
+}
+</script>
+
+</body>
+</html>
