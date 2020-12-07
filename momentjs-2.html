@@ -3,13 +3,17 @@
 <script>
 document.write(moment().format('DD.MM.YYYY dddd HH:mm:ss'));
 var asd = (moment().format('DD.MM.YYYY dddd HH:mm:ss'));
+var elma = moment().format('DD.MM.YYYY dddd HH:mm:ss');
+
 function limon() {
 document.getElementById("xd1").innerHTML = asd;
 document.getElementById("xd2").value = asd;
+document.getElementById("xd3").value = elma;
 }
 </script>
 
 <div style="background-color:gray">
 <p id="xd1"></p></div>
 
-<input type="text" id="xd2" size="24"></input>
+<input type="text" id="xd2" size="24"></input><br>
+<input type="text" id="xd3" size="24"></input>
