@@ -1,0 +1,32 @@
+<body bgcolor="#333">
+
+<style>
+.new-home {
+position: fixed;
+top: 30vh;
+margin: 1em;
+padding: 2em;
+background: #bad455;
+border: 3px solid #7b8234;
+border-radius: 6px;
+color: #333;
+left: 0;
+font-size: 1.5em;
+right: 0;
+text-align:center;
+}
+</style>
+
+<script>
+function closeBanner() {
+document.querySelector('.new-home').remove();
+}
+</script>
+
+<div class="new-home">
+<p>siteme hoş geldiniz!</p>
+<a href="https://google.com">🏠 Go home</a>
+<p>
+<button onclick="closeBanner()">hb knk</button>
+</p>
+</div>
