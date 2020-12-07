@@ -1,0 +1,13 @@
+<body bgcolor="#333"><center>
+
+<textarea cols=55 rows=5 id="source" oninput="asd('source', 'target', 'ali')"></textarea><br><br>
+<textarea cols=55 rows=5 id="target"></textarea><br><br>
+<div id="ali"></div>
+
+<script>
+function asd(sourceId, targetId, aliId){
+var data = document.getElementById(sourceId).value;
+document.getElementById(targetId).innerHTML = data;
+document.getElementById(aliId).innerHTML = data;
+}
+</script>
