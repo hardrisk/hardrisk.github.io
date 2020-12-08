@@ -1,0 +1,96 @@
+<body bgcolor="#333"><center>
+
+<style>
+textarea{background-color:darkgray;border:2px solid black;outline:none;width:60%;margin-bottom:5px}
+button{background-color:darkgray;border:2px solid black;outline:none;margin-bottom:-2px}
+</style>
+
+
+<script>
+window.onload = function () {
+var copyTextareaBtn = Array.prototype.slice.call(document.querySelectorAll('.jskopyalabuton'));
+var copyTextarea = Array.prototype.slice.call(document.querySelectorAll('.jsicerik'));
+copyTextareaBtn.forEach(function(btn, idx){
+btn.addEventListener("click", function(){
+copyTextarea[idx].select();
+try {
+var msg = document.execCommand('copy') ? 'başarılı' : 'başarısız';
+alert('kopyalama ' + msg); // alert yerine console.log da yazılabilir
+} catch (err) {
+console.log('Whoops, unable to copy');
+}});});}
+</script>
+
+
+<textarea class="jsicerik" rows="5"><style>
+textarea{text-align:;outline:none;border:2px solid black;background-color:black;color:darkgreen;width:450px;height:150px}
+</style></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"><style>
+textarea{background-color:darkgray;border:2px solid black;outline:none;width:60%}
+button{background-color:darkgray;border:2px solid black;outline:none;}
+</style></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"><body bgcolor="#333"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"><body bgcolor="#333"><center></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"><script>
+
+</script></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"><style>
+
+</style></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5">textarea{background-color:darkgray;border:2px solid black;outline:none;width:;}</textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
+<textarea class="jsicerik" rows="5"></textarea><br>
+<button class="jskopyalabuton">kopyala</button><br><hr>
+
