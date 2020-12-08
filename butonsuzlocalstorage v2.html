@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<style>
+textarea{background-color:darkgray;border:2px solid black;outline:none;width:80%;height:250px;}
+</style>
+<body onload="getData()" bgcolor="#333"><center>
+
+<textarea id="inp" onchange="saveData(this)"></textarea>
+<div id="divim"></div>
+
+her harfte localstoragea kaydediyor ama her harfte divi yeniden yükleyemiyor. o yüzden çok iyi değil.
+
+</center>
+
+
+<script>
+function saveData(el) {
+localStorage.setItem(el.id, JSON.stringify(el.value));
+}
+
+function getData() {
+var inp = document.getElementById("inp");
+inp.value = JSON.parse(localStorage.getItem('inp')) || "";
+var xd = document.getElementById("divim");
+xd.innerHTML = inp.value;
+}
+</script>
+
+</body>
+</html>
