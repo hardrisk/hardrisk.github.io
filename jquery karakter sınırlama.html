@@ -1,0 +1,24 @@
+<body bgcolor="#333"><center>
+<style>
+textarea{background-color:darkgray;border:2px solid black;outline:none;width:650px;height:100px}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<script>
+function countChar(val) 
+{
+var limit = 200;
+if ( val.length > limit )
+{ 
+$("#comment").val(val.substring(0, limit-1));
+val.length = limit;
+}
+$("#count").html((limit)-(val.length));     
+}
+</script>
+
+<textarea autofocus id="comment" onKeyUp="countChar(this.value)" required></textarea>
+<div id="count"></div>
+
+<br><br><br><br><br>
+<a href="https://stackoverflow.com/questions/5371089/count-characters-in-textarea">kaynak</a><br>
