@@ -1,0 +1,32 @@
+<body bgcolor="#333"><center>
+
+<style>
+textarea{background-color:darkgray;border:2px solid black;outline:none;width:60%}
+</style>
+
+
+<script>
+window.onload = function () {
+var copyTextareaBtn = Array.prototype.slice.call(document.querySelectorAll('.jskopyalabuton'));
+var copyTextarea = Array.prototype.slice.call(document.querySelectorAll('.jsicerik'));
+copyTextareaBtn.forEach(function(btn, idx){
+btn.addEventListener("click", function(){
+copyTextarea[idx].select();
+try {
+var msg = document.execCommand('copy') ? 'başarılı' : 'başarısız';
+alert('kopyalama ' + msg); // alert yerine console.log da yazılabilir
+} catch (err) {
+console.log('Whoops, unable to copy');
+}});});}
+</script>
+
+Test 1:<br>
+<textarea class="jsicerik" rows="5">Hello. This is textarea test bed #1</textarea><br>
+<button class="jskopyalabuton">Copy Text (works)</button>
+
+<br><br><br><br>
+Test 2:<br>
+<textarea class="jsicerik" rows="5">Hi! Welcome to textarea test bed #2</textarea><br>
+<button class="jskopyalabuton">Copy Text (broken)</button>
+
+<a href="https://stackoverflow.com/questions/45472971/javascript-copy-text-buttons-for-multiple-textareas-on-one-page">kaynak</a><br>
