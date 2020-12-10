@@ -36,11 +36,11 @@ javascript:(function(s){try{s=document.selection.createRange().text}catch(_){s=d
 <p>youtube url to music.youtube url:</p><textarea onclick="this.focus();this.select();document.execCommand('copy')" readonly>
 javascript:(function() { window.location=window.location.toString().replace(/^https:\/\/www\./,'https://music.'); })()
 </textarea><br>
-<p>baktığın dosyayı github.com'da görüntüle:</p>
+<p>hardrisk.github.io'da baktığın dosyayı github.com'da görüntüle:</p>
 <textarea onclick="this.focus();this.select();document.execCommand('copy')" readonly>
 javascript:u=location.href;if(u.match('github\.io')){if(u.match('github\.io')){u=u.replace('hardrisk.github.io','github.com/hardrisk/hardrisk.github.io/blob/master')}if(u.match('github\.com')){u=u.replace('hardrisk.github.io','hardrisk.github.io')}else{u=u.replace('github\.com/hardrisk','test')}window.location=u;}else{alert('Not a github URL.')}
 </textarea><br>
-<p>baktığın dosyayı github.com'da düzenle:</p>
+<p>hardrisk.github.io'da baktığın dosyayı github.com'da düzenle:</p>
 <textarea onclick="this.focus();this.select();document.execCommand('copy')" readonly>
 javascript:u=location.href;if(u.match('github\.io')){if(u.match('github\.io')){u=u.replace('hardrisk.github.io','github.com/hardrisk/hardrisk.github.io/edit/master')}if(u.match('github\.com')){u=u.replace('hardrisk.github.io','hardrisk.github.io')}else{u=u.replace('github\.com/hardrisk','test')}window.location=u;}else{alert('Not a github URL.')}
 </textarea><br>
