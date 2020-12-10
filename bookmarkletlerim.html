@@ -40,6 +40,10 @@ javascript:(function() { window.location=window.location.toString().replace(/^ht
 <textarea onclick="this.focus();this.select();document.execCommand('copy')" readonly>
 javascript:u=location.href;if(u.match('github\.io')){if(u.match('github\.io')){u=u.replace('hardrisk.github.io','github.com/hardrisk/hardrisk.github.io/blob/master')}if(u.match('github\.com')){u=u.replace('hardrisk.github.io','hardrisk.github.io')}else{u=u.replace('github\.com/hardrisk','test')}window.location=u;}else{alert('Not a github URL.')}
 </textarea><br>
+<p>hardrisk.github.io'da baktığın dosyayı github.com'da RAW OLARAK görüntüle:</p>
+<textarea onclick="this.focus();this.select();document.execCommand('copy')" readonly>
+javascript:u=location.href;if(u.match('github\.io')){if(u.match('github\.io')){u=u.replace('hardrisk.github.io','raw.githubusercontent.com/hardrisk/hardrisk.github.io/master')}if(u.match('github\.com')){u=u.replace('hardrisk.github.io','hardrisk.github.io')}else{u=u.replace('github\.com/hardrisk','test')}window.location=u;}else{alert('Not a github URL.')}
+</textarea><br>
 <p>hardrisk.github.io'da baktığın dosyayı github.com'da düzenle:</p>
 <textarea onclick="this.focus();this.select();document.execCommand('copy')" readonly>
 javascript:u=location.href;if(u.match('github\.io')){if(u.match('github\.io')){u=u.replace('hardrisk.github.io','github.com/hardrisk/hardrisk.github.io/edit/master')}if(u.match('github\.com')){u=u.replace('hardrisk.github.io','hardrisk.github.io')}else{u=u.replace('github\.com/hardrisk','test')}window.location=u;}else{alert('Not a github URL.')}
