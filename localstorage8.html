@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5 page</title><style>input{background-color:#333;outline:none;border:2px solid black;}</style>
+</head>
+<body bgcolor="#333" onload="showLS()">
+
+<center>
+<input autofocus placeholder="yaz" autocomplete="off" type="text" id="beniminputum"><br><br>
+<button id="btnSave" onclick="saveData()">kaydet</button>
+<button onclick="test();localStorage.setItem('veriler','');showLS()">tüm verileri sil</button>
+<button onclick="showLS()">verileri göster</button>
+<p>Contents:<br>
+<pre id="contents"></pre>
+
+
+
+<script>
+var input = document.getElementById("beniminputum");
+input.addEventListener("keyup", function(event) {
+if (event.keyCode === 13) {
+event.preventDefault();
+document.getElementById("btnSave").click();
+}
+});
+function saveData(){
+var lsNames = localStorage.getItem('veriler'), 
+arr = [];
+if (!lsNames) { lsName = ''; }  // initialize if null
+arr = lsNames.split(',');
+
+arr.push(document.getElementById("beniminputum").value);
+lsNames = arr.join('</li>');
+localStorage.setItem("veriler", lsNames);
+showLS();
+var resetButton = document.getElementById("beniminputum");
+if(resetButton){
+resetButton.value= "";
+}
+}
+function showLS() {
+var sidik = localStorage.getItem('veriler');
+document.getElementById('contents').innerHTML = "kayıtlı veriler:\n\n"+sidik;
+};
+function test() {
+var x;
+if (confirm("Emin misin?") == true) {
+x = "You pressed OK!";
+} else {
+x = "You pressed Cancel!";
+}
+return x; 
+}
+</script>
+
+
+
+
+
+
+
+<hr>
+<h1>bilinen buglar:</h1>
+<p>"tüm verileri sil" butonuna tıklayınca uyarı çıkıyor. iptale tıklasan da siliyor, tamama tıklasan da siliyor. o düzeltilecek.</p>
+</center>
+</body>
+</html>
