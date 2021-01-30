@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<body bgcolor="#333">
+<style>
+input{border:2px solid black;outline:none;background-color:transparent;text-align:center;width:80px}
+</style><center>
+
+
+saniyede <input type="number" autofocus onkeyup="asd()" id="elma"></input> megabayt indiriyorsan;<br>
+<br>dakikada <label id="armut1"></label> megabayt<br>saatte <label id="armut2"></label> megabayt yani
+<label id="armut3"></label> gigabyte indirebilirsin.<br><br>
+
+günde <label id="armut4"></label> gigabyte indirebilirsin.<br>
+ayda <label id="armut5"></label> gigabyte indirebilirsin.<br>
+
+<script>
+function asd() {
+var x = document.getElementById("elma").value;
+document.getElementById("armut1").innerHTML = x*60;
+document.getElementById("armut2").innerHTML = x*60*60;
+document.getElementById("armut3").innerHTML = x*60*60/1024;
+document.getElementById("armut4").innerHTML = x*60*60*24/1024;
+document.getElementById("armut5").innerHTML = x*60*60*24*30/1024;}
+</script>
+</center>
+</body>
+</html>
